@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.ProductoController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Gestión de Productos" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER_LEFT" spacing="14" maxWidth="420">
+                <Label text="Registrar / Editar Producto" styleClass="page-title"/>
+                <Label text="Complete los datos del producto químico" styleClass="page-subtitle"/>
+
+                <Region prefHeight="8"/>
+
+                <GridPane hgap="16" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="100"/>
+                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    </columnConstraints>
+
+                    <Label text="Nombre:" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nombre" promptText="Nombre del producto"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Stock mínimo:" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="stockMinimo" promptText="Ej: 10.0"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Unidad:" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="unidadMedida" promptText="Seleccione unidad"
+                              maxWidth="Infinity"
+                              GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Region prefHeight="10"/>
+
+                <HBox spacing="12">
+                    <Button text="Guardar Producto" styleClass="btn-success"    onAction="#guardarProducto"/>
+                    <Button text="Ver Productos"    styleClass="btn-primary"    onAction="#irAVistaTabla"/>
+                    <Button text="← Volver"         styleClass="btn-secondary"  onAction="#volver"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="380"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+
+</BorderPane>

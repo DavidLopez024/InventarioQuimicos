@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="co.edu.upb.inventarioquimicos.controladores.menuController"
+      styleClass="nav-bar">
+
+    <!-- ── Bodeguero ── -->
+    <Button fx:id="btnEntrada"     text="&#128230; Entrada"     styleClass="btn-nav-bottom" onAction="#irEntrada"/>
+    <Button fx:id="btnInventario"  text="&#128203; Inventario"  styleClass="btn-nav-bottom" onAction="#irInventario"/>
+    <Button fx:id="btnPerdida"     text="&#9888; Pérdidas"      styleClass="btn-nav-bottom" onAction="#irPerdida"/>
+    <Button fx:id="btnTraslado"    text="&#8646; Traslados"     styleClass="btn-nav-bottom" onAction="#irTraslado"/>
+    <Button fx:id="btnMovimientos" text="&#128200; Movimientos" styleClass="btn-nav-bottom" onAction="#irMovimientos"/>
+
+    <Region HBox.hgrow="ALWAYS"/>
+
+    <!-- ── Solo admin (tinte ámbar) ── -->
+    <Button fx:id="btnProductos"   text="&#9881; Productos"     styleClass="btn-nav-bottom-admin" onAction="#irProductos"/>
+    <Button fx:id="btnProveedores" text="&#128222; Proveedores" styleClass="btn-nav-bottom-admin" onAction="#irProveedores"/>
+
+</HBox>

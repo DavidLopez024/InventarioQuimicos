@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.TrasladoController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Trasladar Producto" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER_LEFT" spacing="14" maxWidth="420">
+                <Label text="Traslado de Producto" styleClass="page-title"/>
+                <Label text="Registre el movimiento entre estados del inventario" styleClass="page-subtitle"/>
+
+                <Region prefHeight="8"/>
+
+                <GridPane hgap="16" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="80"/>
+                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    </columnConstraints>
+
+                    <Label text="Producto:" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="productoCombo" promptText="Seleccione producto"
+                              maxWidth="Infinity"
+                              GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Origen:" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="origenCombo" promptText="Estado origen"
+                              maxWidth="Infinity"
+                              GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Destino:" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="destinoCombo" promptText="Estado destino"
+                              maxWidth="Infinity"
+                              GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Cantidad:" styleClass="field-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="cantidad" promptText="Ej: 10.0"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Region prefHeight="10"/>
+
+                <HBox spacing="12">
+                    <Button text="Registrar Traslado" styleClass="btn-primary"   onAction="#registrarTraslado"/>
+                    <Button text="← Volver"           styleClass="btn-secondary" onAction="#volver"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="380"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+
+</BorderPane>

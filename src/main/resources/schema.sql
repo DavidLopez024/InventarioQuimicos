@@ -1,0 +1,1 @@
+-- intentionally empty: schema migration handled by DatabaseMigration.java

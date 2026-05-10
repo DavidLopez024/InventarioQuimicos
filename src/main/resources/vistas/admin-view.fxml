@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.AdminController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Panel Administrador" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER" spacing="14" maxWidth="380">
+                <Label text="Panel de Administración" styleClass="page-title"/>
+                <Label text="Seleccione una opción para continuar" styleClass="page-subtitle"/>
+
+                <Region prefHeight="6"/>
+
+                <Label text="— Gestión —" styleClass="section-label"/>
+
+                <Button text="Gestionar Productos"
+                        styleClass="btn-nav" onAction="#irAProductos" maxWidth="Infinity"/>
+
+                <Button text="Registrar Proveedor"
+                        styleClass="btn-nav" onAction="#irAProveedores" maxWidth="Infinity"/>
+
+                <Button text="Ver Proveedores"
+                        styleClass="btn-nav" onAction="#irAListaProveedores" maxWidth="Infinity"/>
+
+                <Button text="Gestionar Usuarios"
+                        styleClass="btn-nav" onAction="#irAGestionUsuarios" maxWidth="Infinity"/>
+
+                <Label text="— Inventario —" styleClass="section-label"/>
+
+                <Button text="Registrar Entrada"
+                        styleClass="btn-nav" onAction="#registrarEntrada" maxWidth="Infinity"/>
+
+                <Button text="Ver Inventario"
+                        styleClass="btn-nav" onAction="#verInventario" maxWidth="Infinity"/>
+
+                <Button text="Registrar Pérdida"
+                        styleClass="btn-nav" onAction="#irAPerdidas" maxWidth="Infinity"/>
+
+                <Button text="Ver Movimientos"
+                        styleClass="btn-nav" onAction="#verMovimientos" maxWidth="Infinity"/>
+
+                <Button text="Trasladar Producto"
+                        styleClass="btn-nav" onAction="#irATraslado" maxWidth="Infinity"/>
+
+                <Region prefHeight="6"/>
+
+                <Button text="Cerrar Sesión"
+                        styleClass="btn-logout" onAction="#logout" maxWidth="Infinity"/>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

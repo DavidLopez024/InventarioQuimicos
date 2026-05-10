@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.InventarioController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Ver Inventario" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="12" style="-fx-padding: 20;">
+
+            <!-- Alertas + Stock -->
+            <HBox spacing="12" VBox.vgrow="NEVER">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Alertas" styleClass="alert-label"/>
+                    <ListView fx:id="listaAlertas" prefHeight="130" minHeight="80"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Stock Total por Producto" styleClass="section-label"/>
+                    <ListView fx:id="listaStockTotal" prefHeight="130" minHeight="80"/>
+                </VBox>
+            </HBox>
+
+            <!-- Tabla de lotes -->
+            <Label text="Detalle de Lotes" styleClass="section-label"/>
+            <TableView fx:id="tablaInventario" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colProducto"    text="Producto"    prefWidth="160"/>
+                    <TableColumn fx:id="colProveedor"   text="Proveedor"   prefWidth="140"/>
+                    <TableColumn fx:id="colCantidad"    text="Cantidad"    prefWidth="90"/>
+                    <TableColumn fx:id="colFecha"       text="Ingreso"     prefWidth="100"/>
+                    <TableColumn fx:id="colVencimiento" text="Vencimiento" prefWidth="110"/>
+                    <TableColumn fx:id="colCosto"       text="Costo"       prefWidth="90"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+
+            <HBox>
+                <Button text="← Volver" styleClass="btn-secondary" onAction="#volver"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.LoteController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Registrar Entrada" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER_LEFT" spacing="14" maxWidth="420">
+                <Label text="Registrar Entrada de Inventario" styleClass="page-title"/>
+                <Label text="Complete los datos del lote a ingresar" styleClass="page-subtitle"/>
+
+                <Region prefHeight="8"/>
+
+                <GridPane hgap="16" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="110"/>
+                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    </columnConstraints>
+
+                    <Label text="Producto:" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="productoCombo" promptText="Seleccione producto"
+                              maxWidth="Infinity"
+                              GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="N&#186; de lote:" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="numeroLote" promptText="Ej: LOT-2024-001"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Cantidad:" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="cantidad" promptText="Ej: 50.0"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Costo ($):" styleClass="field-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="costo" promptText="Ej: 25000"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Fecha ingreso:" styleClass="field-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="fechaIngreso" editable="false"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Vencimiento:" styleClass="field-label" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="fechaVencimiento" promptText="Seleccione fecha"
+                                maxWidth="Infinity"
+                                GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Region prefHeight="10"/>
+
+                <HBox spacing="12">
+                    <Button text="Registrar Entrada" styleClass="btn-success"   onAction="#guardarLote"/>
+                    <Button text="&#8592; Volver"   styleClass="btn-secondary" onAction="#volver"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="380"/>
+            </VBox>
+        </VBox>
+
+
+    </center>
+
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+
+</BorderPane>

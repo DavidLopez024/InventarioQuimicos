@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.RegistroUsuarioController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Gestión de Usuarios" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER_LEFT" spacing="14" maxWidth="460">
+                <Label text="Registrar Usuario" styleClass="page-title"/>
+                <Label text="Complete los datos del nuevo usuario del sistema" styleClass="page-subtitle"/>
+
+                <Region prefHeight="8"/>
+
+                <GridPane hgap="16" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="120" />
+                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    </columnConstraints>
+
+                    <Label text="Nombre completo:" styleClass="field-label"
+                           GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nombreCompleto" promptText="Nombre y apellido"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Usuario:" styleClass="field-label"
+                           GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="username" promptText="Nombre de usuario"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Contraseña:" styleClass="field-label"
+                           GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <PasswordField fx:id="password" promptText="Contraseña (mín. 4 caracteres)"
+                                   maxWidth="Infinity"
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Confirmar:" styleClass="field-label"
+                           GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <PasswordField fx:id="confirmPassword" promptText="Repita la contraseña"
+                                   maxWidth="Infinity"
+                                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Rol:" styleClass="field-label"
+                           GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="rolCombo" promptText="Seleccione rol"
+                              maxWidth="Infinity"
+                              GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Region prefHeight="10"/>
+
+                <HBox spacing="12">
+                    <Button text="Guardar Usuario" styleClass="btn-success"   onAction="#guardarUsuario"/>
+                    <Button text="Ver Usuarios"    styleClass="btn-primary"   onAction="#irAListaUsuarios"/>
+                    <Button text="&#8592; Volver"  styleClass="btn-secondary" onAction="#volver"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="400"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+
+</BorderPane>

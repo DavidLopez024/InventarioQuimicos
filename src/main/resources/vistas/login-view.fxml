@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.LoginController"
+            stylesheets="@../estilos/styles.css">
+
+    <!-- HEADER -->
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="10">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+        </HBox>
+    </top>
+
+    <!-- LOGIN CARD -->
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER" spacing="18" maxWidth="380">
+                <Label text="Iniciar Sesión" styleClass="page-title"/>
+                <Label text="Ingrese sus credenciales para continuar" styleClass="page-subtitle"/>
+
+                <Region prefHeight="6"/>
+
+                <VBox spacing="6">
+                    <Label text="Usuario" styleClass="field-label"/>
+                    <TextField fx:id="usuario" promptText="Nombre de usuario" prefWidth="300"/>
+                </VBox>
+
+                <VBox spacing="6">
+                    <Label text="Contraseña" styleClass="field-label"/>
+                    <PasswordField fx:id="password" promptText="Contraseña" prefWidth="300"/>
+                </VBox>
+
+                <Region prefHeight="8"/>
+
+                <Button text="ACCEDER" styleClass="btn-primary"
+                        onAction="#login" prefWidth="300" defaultButton="true"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- FOOTER -->
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding: 10;">
+            <Label text="Sistema de gestión de inventario para productos químicos"
+                   styleClass="page-subtitle"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

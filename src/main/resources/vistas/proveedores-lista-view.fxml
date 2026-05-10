@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.ProveedoresListaController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Lista de Proveedores" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="12" style="-fx-padding: 20;">
+            <Label text="Proveedores Registrados" styleClass="section-label"/>
+
+            <TableView fx:id="tablaProveedores" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colNombre"    text="Nombre"      prefWidth="180"/>
+                    <TableColumn fx:id="colContacto"  text="Contacto"    prefWidth="140"/>
+                    <TableColumn fx:id="colTelefono"  text="Teléfono"    prefWidth="120"/>
+                    <TableColumn fx:id="colCorreo"    text="Correo"      prefWidth="180"/>
+                    <TableColumn fx:id="colFormaPago" text="Forma de pago" prefWidth="130"/>
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                </columnResizePolicy>
+            </TableView>
+
+            <HBox spacing="12">
+                <Button text="Eliminar" styleClass="btn-danger"    onAction="#eliminarProveedor"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="&#8592; Volver" styleClass="btn-secondary" onAction="#volver"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.BodegueroController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Panel Bodeguero" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+
+            <VBox styleClass="card" alignment="CENTER" spacing="16" maxWidth="380">
+                <Label text="Panel de Bodeguero" styleClass="page-title"/>
+                <Label text="Seleccione una operación" styleClass="page-subtitle"/>
+
+                <Region prefHeight="8"/>
+
+                <Button text="Registrar Entrada"
+                        styleClass="btn-nav" onAction="#registrarEntrada"/>
+
+                <Button text="Ver Inventario"
+                        styleClass="btn-nav" onAction="#verInventario"/>
+
+                <Button text="Registrar Pérdida"
+                        styleClass="btn-nav" onAction="#irAPerdidas"/>
+
+                <Button text="Ver Movimientos"
+                        styleClass="btn-nav" onAction="#verMovimientos"/>
+
+                <Button text="Trasladar Producto"
+                        styleClass="btn-nav" onAction="#irATraslado"/>
+
+                <Region prefHeight="6"/>
+
+                <Button text="Cerrar Sesión"
+                        styleClass="btn-logout" onAction="#logout"/>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>

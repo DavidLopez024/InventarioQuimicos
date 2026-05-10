@@ -1,0 +1,335 @@
+/* ===== ROOT ===== */
+.root {
+    -fx-background-color: #F0F2F5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+/* ===== HEADER BAR ===== */
+.header-bar {
+    -fx-background-color: #1565C0;
+    -fx-padding: 0 24 0 24;
+    -fx-min-height: 54px;
+    -fx-max-height: 54px;
+}
+.header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+.header-page {
+    -fx-text-fill: #BBDEFB;
+    -fx-font-size: 13px;
+}
+
+/* ===== CARD ===== */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 10, 0, 0, 3);
+    -fx-padding: 32 40 32 40;
+}
+
+/* ===== PAGE TITLE ===== */
+.page-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A237E;
+}
+.page-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #78909C;
+}
+
+/* ===== FORM LABELS ===== */
+.field-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474F;
+}
+
+/* ===== INPUTS ===== */
+.text-field, .password-field {
+    -fx-background-color: #FAFAFA;
+    -fx-border-color: #CFD8DC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8 12 8 12;
+    -fx-pref-height: 36px;
+    -fx-pref-width: 300px;
+}
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #1565C0;
+    -fx-background-color: white;
+}
+
+.combo-box {
+    -fx-background-color: #FAFAFA;
+    -fx-border-color: #CFD8DC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-pref-height: 36px;
+    -fx-pref-width: 300px;
+}
+.combo-box:focused {
+    -fx-border-color: #1565C0;
+}
+/* Selected value displayed in the button area */
+.combo-box .list-cell {
+    -fx-text-fill: #37474F;
+    -fx-background-color: transparent;
+    -fx-padding: 4 8 4 8;
+}
+/* Dropdown popup */
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #CFD8DC;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 3);
+}
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #37474F;
+    -fx-background-color: white;
+    -fx-padding: 7 12 7 12;
+    -fx-font-size: 13px;
+}
+.combo-box-popup .list-view .list-cell:odd {
+    -fx-background-color: #FAFAFA;
+}
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #1565C0;
+}
+.combo-box-popup .list-view .list-cell:selected,
+.combo-box-popup .list-view .list-cell:focused {
+    -fx-background-color: #BBDEFB;
+    -fx-text-fill: #0D47A1;
+}
+
+.date-picker {
+    -fx-background-color: #FAFAFA;
+    -fx-border-color: #CFD8DC;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-pref-height: 36px;
+    -fx-pref-width: 300px;
+}
+.date-picker:focused {
+    -fx-border-color: #1565C0;
+}
+/* DatePicker text field inside */
+.date-picker .text-field {
+    -fx-text-fill: #37474F;
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-pref-width: 260px;
+}
+/* DatePicker calendar popup */
+.date-picker-popup {
+    -fx-background-color: white;
+    -fx-border-color: #CFD8DC;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 3);
+}
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #1565C0;
+}
+.date-picker-popup .spinner .label,
+.date-picker-popup .spinner .button .label {
+    -fx-text-fill: white;
+}
+.date-picker-popup .day-name-cell,
+.date-picker-popup .day-cell {
+    -fx-text-fill: #37474F;
+}
+.date-picker-popup .day-cell:today {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #1565C0;
+    -fx-font-weight: bold;
+}
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: white;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 28 10 28;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-min-width: 130px;
+}
+.btn-primary:hover   { -fx-background-color: #1976D2; }
+.btn-primary:pressed { -fx-background-color: #0D47A1; }
+
+.btn-success {
+    -fx-background-color: #2E7D32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 28 10 28;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-min-width: 130px;
+}
+.btn-success:hover   { -fx-background-color: #388E3C; }
+.btn-success:pressed { -fx-background-color: #1B5E20; }
+
+.btn-danger {
+    -fx-background-color: #C62828;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 28 10 28;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-min-width: 130px;
+}
+.btn-danger:hover   { -fx-background-color: #D32F2F; }
+.btn-danger:pressed { -fx-background-color: #B71C1C; }
+
+.btn-secondary {
+    -fx-background-color: #ECEFF1;
+    -fx-text-fill: #37474F;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 28 10 28;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-min-width: 130px;
+}
+.btn-secondary:hover   { -fx-background-color: #CFD8DC; }
+.btn-secondary:pressed { -fx-background-color: #B0BEC5; }
+
+/* Navigation menu buttons (admin / bodeguero panels) */
+.btn-nav {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 16 0 16 0;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-pref-width: 260px;
+    -fx-alignment: CENTER;
+}
+.btn-nav:hover {
+    -fx-background-color: #1E88E5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 8, 0, 0, 2);
+}
+.btn-nav:pressed { -fx-background-color: #0D47A1; }
+
+.btn-logout {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C62828;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 0 10 0;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-pref-width: 180px;
+    -fx-border-color: #C62828;
+    -fx-border-radius: 6px;
+    -fx-border-width: 1.5px;
+}
+.btn-logout:hover {
+    -fx-background-color: #FFEBEE;
+}
+
+/* ===== TABLE ===== */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+.table-view .column-header-background {
+    -fx-background-color: #1565C0;
+    -fx-background-radius: 6px 6px 0 0;
+}
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.table-view .table-row-cell:odd  { -fx-background-color: #F5F9FF; }
+.table-view .table-row-cell:even { -fx-background-color: white; }
+.table-view .table-row-cell:selected { -fx-background-color: #BBDEFB; }
+.table-view .table-row-cell:selected .text { -fx-fill: #0D47A1; }
+
+/* ===== LIST VIEW (alertas / stock) ===== */
+.list-view {
+    -fx-background-color: white;
+    -fx-border-color: #E0E0E0;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+.list-view .list-cell {
+    -fx-padding: 6 10;
+    -fx-text-fill: #37474F;
+}
+.list-view .list-cell:odd  { -fx-background-color: #FAFAFA; }
+.list-view .list-cell:even { -fx-background-color: white; }
+.list-view .list-cell:selected {
+    -fx-background-color: #BBDEFB;
+    -fx-text-fill: #0D47A1;
+}
+.list-view .list-cell:selected:focused {
+    -fx-background-color: #1565C0;
+    -fx-text-fill: white;
+}
+.list-view:focused { -fx-border-color: #1565C0; }
+
+/* ===== BOTTOM NAV BAR ===== */
+.nav-bar {
+    -fx-background-color: #1A237E;
+    -fx-padding: 6 16 6 16;
+    -fx-min-height: 46px;
+    -fx-max-height: 46px;
+    -fx-spacing: 6;
+    -fx-alignment: CENTER_LEFT;
+}
+
+/* Bodeguero nav buttons */
+.btn-nav-bottom {
+    -fx-background-color: rgba(255,255,255,0.13);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.btn-nav-bottom:hover   { -fx-background-color: rgba(255,255,255,0.28); }
+.btn-nav-bottom:pressed { -fx-background-color: rgba(255,255,255,0.08); }
+
+/* Admin-only nav buttons (amber tint) */
+.btn-nav-bottom-admin {
+    -fx-background-color: rgba(255,193,7,0.22);
+    -fx-text-fill: #FFF9C4;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.btn-nav-bottom-admin:hover   { -fx-background-color: rgba(255,193,7,0.42); }
+.btn-nav-bottom-admin:pressed { -fx-background-color: rgba(255,193,7,0.12); }
+
+/* ===== SECTION LABEL (inside card) ===== */
+.section-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1565C0;
+}
+.alert-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #C62828;
+}

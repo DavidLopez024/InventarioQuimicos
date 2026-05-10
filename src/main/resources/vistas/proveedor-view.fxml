@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="co.edu.upb.inventarioquimicos.controladores.ProveedorController"
+            stylesheets="@../estilos/styles.css">
+
+    <top>
+        <HBox styleClass="header-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Sistema de Inventario Químico" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Registro de Proveedores" styleClass="header-page"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="0">
+            <VBox styleClass="card" alignment="CENTER_LEFT" spacing="14" maxWidth="420">
+                <Label text="Registrar Proveedor" styleClass="page-title"/>
+                <Label text="Complete la información de contacto del proveedor" styleClass="page-subtitle"/>
+
+                <Region prefHeight="8"/>
+
+                <GridPane hgap="16" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="110"/>
+                        <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    </columnConstraints>
+
+                    <Label text="Nombre:" styleClass="field-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nombre" promptText="Nombre del proveedor"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Contacto:" styleClass="field-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="contacto" promptText="Persona de contacto"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Teléfono:" styleClass="field-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="telefono" promptText="Ej: 3001234567"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Correo:" styleClass="field-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="correo" promptText="correo@empresa.com"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Forma de pago:" styleClass="field-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="formaPago" promptText="Ej: Transferencia"
+                               maxWidth="Infinity"
+                               GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Region prefHeight="10"/>
+
+                <HBox spacing="12">
+                    <Button text="Guardar Proveedor" styleClass="btn-success"   onAction="#guardarProveedor"/>
+                    <Button text="Ver Proveedores"   styleClass="btn-primary"   onAction="#irAListaProveedores"/>
+                    <Button text="&#8592; Volver"    styleClass="btn-secondary" onAction="#volver"/>
+                </HBox>
+
+                <Label fx:id="statusLabel" wrapText="true" maxWidth="380"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <fx:include source="menu-views.fxml"/>
+    </bottom>
+
+</BorderPane>
